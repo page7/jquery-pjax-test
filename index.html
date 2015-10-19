@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.pjax.js"></script>
+</head>
+<body>
+
+    <div id="main" data-pjax-container="1">
+        TEST <br />
+        <a href="./test.html" data-pjax="1">Let's go</a>
+    </div>
+
+
+    <script>
+    $(function(){
+        $(document).on('click', 'a[data-pjax]', function(event) {
+            var container = $(this).closest('[data-pjax-container]');
+            $.pjax.click(event, {container: container});
+        });
+    });
+    </script>
+
+
+</body>
+</html>
